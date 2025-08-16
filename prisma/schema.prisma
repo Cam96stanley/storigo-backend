@@ -15,9 +15,9 @@ datasource db {
 
 model User {
   id              Int       @id @default(autoincrement())
-  firebaseUid     String    @unique
   username        String    @unique @db.VarChar(20)
   email           String    @unique
+  passwordHash    String
   profileImageUrl String?
   bio             String?   @db.VarChar(500)
   createdAt       DateTime  @default(now())
